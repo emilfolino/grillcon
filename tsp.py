@@ -24,6 +24,10 @@ N = len(university_names)
 p = [N]*(N + 1)
 
 i = 0
+
+shortest_trip = maxsize
+shortest_trip_universities = {}
+
 while i < N:
     p[i] = p[i] - 1
 
@@ -33,29 +37,23 @@ while i < N:
     university_names[i] = university_names[j]
     university_names[j] = tmp
 
-    permutations["".join(university_names)] = university_names[:]
-    i = 1
-    while p[i] == 0:
-        p[i] = i
-        i += 1
-
-
-shortest_trip = maxsize
-shortest_trip_universities = {}
-
-
-for trip in permutations:
     trip_length = 0
-    for i in range(len(permutations[trip]) - 1):
-        lat1 = universities[permutations[trip][i + 1]]["lat"]
-        lat0 = universities[permutations[trip][i]]["lat"]
-        long1 = universities[permutations[trip][i + 1]]["long"]
-        long0 = universities[permutations[trip][i]]["long"]
+    cities = university_names[:]
+    for i in range(len(cities) - 1):
+        lat1 = universities[cities[i + 1]]["lat"]
+        lat0 = universities[cities[i]]["lat"]
+        long1 = universities[cities[i + 1]]["long"]
+        long0 = universities[cities[i]]["long"]
         trip_length += sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0))
 
     if trip_length < shortest_trip:
         shortest_trip = trip_length
-        shortest_trip_universities = permutations[trip]
+        shortest_trip_universities = cities
+
+    i = 1
+    while p[i] == 0:
+        p[i] = i
+        i += 1
 
 end = timer()
 

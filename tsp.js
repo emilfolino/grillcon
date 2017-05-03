@@ -20,6 +20,9 @@ var N = university_names.length;
 var p = Array(N + 1).fill(N);
 var i = 0;
 
+var shortest_trip = Number.MAX_SAFE_INTEGER ;
+var shortest_trip_universities = {};
+
 while (i < N) {
     p[i]--;
 
@@ -29,7 +32,22 @@ while (i < N) {
     university_names[i] = university_names[j];
     university_names[j] = tmp;
 
-    permutations[university_names.join("")] = university_names.slice();
+    var cities = university_names.slice();
+
+    var trip_length = 0;
+    for (var i = 0; i < cities.length - 1; i++) {
+        var lat1 = universities[cities[i + 1]]["lat"];
+        var lat0 = universities[cities[i]]["lat"];
+        var long1 = universities[cities[i + 1]]["long"];
+        var long0 = universities[cities[i]]["long"];
+        trip_length += Math.sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
+    }
+
+    if (trip_length < shortest_trip) {
+        shortest_trip = trip_length;
+        shortest_trip_universities = cities;
+    }
+
     i = 1;
     while (p[i] == 0) {
         p[i] = i;
@@ -37,34 +55,11 @@ while (i < N) {
     }
 }
 
-var shortest_trip = Number.MAX_SAFE_INTEGER ;
-var shortest_trip_universities = {};
-
-for (var trip in permutations) {
-    if (permutations.hasOwnProperty(trip)) {
-        var trip_length = 0;
-        for (var i = 0; i < permutations[trip].length - 1; i++) {
-            var lat1 = universities[permutations[trip][i + 1]]["lat"];
-            var lat0 = universities[permutations[trip][i]]["lat"];
-            var long1 = universities[permutations[trip][i + 1]]["long"];
-            var long0 = universities[permutations[trip][i]]["long"];
-            trip_length += Math.sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
-        }
-
-        if (trip_length < shortest_trip) {
-            shortest_trip = trip_length;
-            shortest_trip_universities = permutations[trip];
-        }
-    }
-}
-
 
 var end = new Date().getTime();
 var time = end - start;
 
-
 console.log("Shortest trip length: " + shortest_trip);
 console.log(shortest_trip_universities.join(" --> "));
-
 
 console.log("Total Execution Time: " + time / 1000 + " seconds.")

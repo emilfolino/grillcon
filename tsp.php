@@ -25,7 +25,8 @@ $permutations = [];
 $N = count($university_names);
 $p = array_fill(0, $N + 1, $N);
 $i = 0;
-
+$shortest_trip = PHP_INT_MAX;
+$shortest_trip_universities = [];
 while ($i < $N) {
     $p[$i]--;
 
@@ -35,7 +36,20 @@ while ($i < $N) {
     $university_names[$i] = $university_names[$j];
     $university_names[$j] = $tmp;
 
-    $permutations[implode("", array_values($university_names))] = $university_names;
+    $cities = $university_names;
+    $trip_length = 0;
+    for ($i = 0; $i < count($cities) - 1; $i++) {
+        $lat1 = $universities[$cities[$i + 1]]["lat"];
+        $lat0 = $universities[$cities[$i]]["lat"];
+        $long1 = $universities[$cities[$i + 1]]["long"];
+        $long0 = $universities[$cities[$i]]["long"];
+        $trip_length += sqrt(($lat1 - $lat0)*($lat1 - $lat0) + ($long1 - $long0)*($long1 - $long0));
+    }
+
+    if ($trip_length < $shortest_trip) {
+        $shortest_trip = $trip_length;
+        $shortest_trip_universities = $cities;
+    }
 
     $i = 1;
     while ($p[$i] == 0) {
@@ -44,25 +58,6 @@ while ($i < $N) {
     }
 }
 
-$shortest_trip = PHP_INT_MAX;
-$shortest_trip_universities = [];
-
-foreach ($permutations as $key => $trip) {
-    $trip_length = 0;
-
-    for ($i = 0; $i < count($trip) - 1; $i++) {
-        $lat1 = $universities[$trip[$i + 1]]["lat"];
-        $lat0 = $universities[$trip[$i]]["lat"];
-        $long1 = $universities[$trip[$i + 1]]["long"];
-        $long0 = $universities[$trip[$i]]["long"];
-        $trip_length += sqrt(($lat1 - $lat0)*($lat1 - $lat0) + ($long1 - $long0)*($long1 - $long0));
-    }
-
-    if ($trip_length < $shortest_trip) {
-        $shortest_trip = $trip_length;
-        $shortest_trip_universities = $trip;
-    }
-}
 
 $time_end = microtime(true);
 
