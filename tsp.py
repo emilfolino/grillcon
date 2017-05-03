@@ -1,64 +1,69 @@
-from itertools import permutations
 from timeit import default_timer as timer
 
+start = timer()
+
+# universities = {
+#     'BTH' : {"lat" : 56.18, "long" : 15.59},
+#     'Uppsala' : {"lat" : 59.85, "long" : 17.63},
+#     'Lund' : {"lat" : 55.71, "long" : 13.20},
+#     'KTH' : {"lat" : 59.34, "long" : 18.07},
+#     'Chalmers' : {"lat" : 57.68, "long" : 11.97},
+#     'Luleå' : {"lat" : 65.61, "long" : 22.14},
+#     'Umeå' : {"lat" : 63.82, "long" : 20.30},
+#     'Linköping' : {"lat" : 58.39, "long" : 15.57},
+#     'Karlstad' : {"lat" : 59.40, "long" : 13.58},
+#     'Örebro' : {"lat" : 59.25, "long" : 15.24}
+# };
+#
+# var university_names = Object.keys(universities);
+# var permutations = {};
+#
+# var N = university_names.length;
+# var p = Array(N + 1).fill(N);
+# var i = 0;
+#
+# while (i < N) {
+#     p[i]--;
+#
+#     j = i%2 * p[i];
+#
+#     var tmp = university_names[i];
+#     university_names[i] = university_names[j];
+#     university_names[j] = tmp;
+#
+#     permutations[university_names.join("")] = university_names.slice();
+#     i = 1;
+#     while (p[i] == 0) {
+#         p[i] = i;
+#         i++;
+#     }
+# }
+#
+# var shortest_trip = Number.MAX_SAFE_INTEGER ;
+# var shortest_trip_universities = {};
+#
+# for (var trip in permutations) {
+#     if (permutations.hasOwnProperty(trip)) {
+#         var trip_length = 0;
+#         for (var i = 0; i < permutations[trip].length - 1; i++) {
+#             var lat1 = universities[permutations[trip][i + 1]]["lat"];
+#             var lat0 = universities[permutations[trip][i]]["lat"];
+#             var long1 = universities[permutations[trip][i + 1]]["long"];
+#             var long0 = universities[permutations[trip][i]]["long"];
+#             trip_length += Math.sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
+#         }
+#
+#         if (trip_length < shortest_trip) {
+#             shortest_trip = trip_length;
+#             shortest_trip_universities = permutations[trip];
+#         }
+#     }
+# }
 
 
-def distance(point1, point2):
-    """
-    Returns the Euclidean distance of two points in the Cartesian Plane.
+end = timer()
 
-    >>> distance([3,4],[0,0])
-    5.0
-    >>> distance([3,6],[10,6])
-    7.0
-    """
-    return ((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2) ** 0.5
+# console.log("Shortest trip length: " + shortest_trip);
+# console.log(shortest_trip_universities.join(" --> "));
 
-
-
-def total_distance(points):
-    """
-    Returns the length of the path passing throught
-    all the points in the given order.
-
-    >>> total_distance([[1,2],[4,6]])
-    5.0
-    >>> total_distance([[3,6],[7,6],[12,6]])
-    9.0
-    """
-    return sum([distance(point, points[index + 1]) for index, point in enumerate(points[:-1])])
-
-
-
-def travelling_salesman(points):
-    """
-    Finds the shortest route to visit all the cities by bruteforce.
-    Time complexity is O(N!), so never use on long lists.
-    """
-
-    return min([perm for perm in permutations(points)], key=total_distance)
-
-
-
-def main():
-    ## Points are universities in Sweden
-    ## Order is: BTH, Uppsala, Lund, KTH, Chalmers, Luleå, Umeå,
-    ## Linköping, Karlstad, Örebro
-
-    start = timer()
-    points = [(56.18, 15.59), (59.85, 17.63), (55.71, 13.20),
-                (59.34, 18.07), (57.68, 11.97), (65.61, 22.14),
-                (63.82, 20.30), (58.39, 15.57), (59.40, 13.58), (59.25, 15.24)]
-    print("""The minimum distance to visit all the following points: {}
-        starting at {} is {}.""".format(
-        tuple(points),
-        points[0],
-        total_distance(travelling_salesman(points))))
-
-    end = timer()
-    print("Timing: " + str(end - start))
-
-
-
-if __name__ == "__main__":
-    main()
+print("Total Execution Time: " + str(end - start))

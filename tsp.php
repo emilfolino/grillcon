@@ -70,6 +70,6 @@ $execution_time = ($time_end - $time_start);
 
 
 
-echo "Shortest trip length: " . $shortest_trip . "<br />";
-echo implode(" --> ", $shortest_trip_universities) . "<br />";
-echo '<b>Total Execution Time:</b> '.$execution_time.' seconds';
+echo "Shortest trip length: " . $shortest_trip . "\n";
+echo implode(" --> ", $shortest_trip_universities) . "\n";
+echo "Total Execution Time: ".$execution_time." seconds\n";
