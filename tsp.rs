@@ -20,26 +20,42 @@ fn main() {
     let n: usize = university_names.len();
 
     println!("{}", n);
-    let p: [i32; ] = [n as i32; ];
-    let i: i32 = 0;
+    let mut p: [i32; 11] = [10i32; 11];
+    let mut i: i32 = 0;
 
-    // while ($i < $N) {
-    //     $p[$i]--;
-    //
-    //     $j = $i%2 * $p[$i];
-    //
-    //     $tmp = $university_names[$i];
-    //     $university_names[$i] = $university_names[$j];
-    //     $university_names[$j] = $tmp;
-    //
-    //     $permutations[implode("", array_values($university_names))] = $university_names;
-    //
-    //     $i = 1;
-    //     while ($p[$i] == 0) {
-    //         $p[$i] = $i;
-    //         $i++;
-    //     }
-    // }
+    let mut shortest_trip: i32 = 1000000;
+    let mut shortest_trip_universities: [char; 10] = [""; 10];
+
+    while i < n as i32 {
+        p[i] = p[i] - 1;
+
+        let j: i32 = i % 2 * p[i];
+
+        // $tmp = $university_names[$i];
+        // $university_names[$i] = $university_names[$j];
+        // $university_names[$j] = $tmp;
+        //
+        // $cities = &university_names;
+        // $trip_length = 0;
+        // for ($i = 0; $i < count($cities) - 1; $i++) {
+        //     $lat1 = $universities[$cities[$i + 1]]["lat"];
+        //     $lat0 = $universities[$cities[$i]]["lat"];
+        //     $long1 = $universities[$cities[$i + 1]]["long"];
+        //     $long0 = $universities[$cities[$i]]["long"];
+        //     $trip_length += sqrt(($lat1 - $lat0)*($lat1 - $lat0) + ($long1 - $long0)*($long1 - $long0));
+        // }
+        //
+        // if ($trip_length < $shortest_trip) {
+        //     $shortest_trip = $trip_length;
+        //     $shortest_trip_universities = $cities;
+        // }
+        //
+        // $i = 1;
+        // while ($p[$i] == 0) {
+        //     $p[$i] = $i;
+        //     $i++;
+        // }
+    }
     //
     // $shortest_trip = PHP_INT_MAX;
     // $shortest_trip_universities = [];
