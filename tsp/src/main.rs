@@ -1,6 +1,12 @@
+extern crate time;
+
+use time::PreciseTime;
+
 use std::collections::HashMap;
 
 fn main() {
+    let start = PreciseTime::now();
+
     let mut universities = HashMap::new();
     universities.insert("BTH", (56.18, 15.59));
     universities.insert("Uppsala", (59.85, 17.63));
@@ -14,8 +20,11 @@ fn main() {
     universities.insert("Örebro", (59.25, 15.24));
     universities.insert("Linné", (56.85, 15.24));
 
-    let university_names = universities.keys();
-    let n: usize = university_names.len();
+
+
+    let n: usize = universities.len();
+    let university_names: Vec<String> = vec![];
+    university_names = universities.keys();
 
     let mut p = vec![n; n + 1];
     let mut i: usize = 0;
@@ -28,10 +37,8 @@ fn main() {
 
         let j: usize = i % 2 * p[i];
 
-        // $tmp = $university_names[$i];
-        // $university_names[$i] = $university_names[$j];
-        // $university_names[$j] = $tmp;
-        //
+        university_names.swap(i, j);
+
         // $cities = &university_names;
         // $trip_length = 0;
         // for ($i = 0; $i < count($cities) - 1; $i++) {
@@ -65,4 +72,9 @@ fn main() {
     // echo implode(" --> ", $shortest_trip_universities) . "\n";
     // echo "Total Execution Time: ".$execution_time." seconds\n";
 
+
+
+    let end = PreciseTime::now();
+
+    println!("{} seconds for.", start.to(end));
 }
