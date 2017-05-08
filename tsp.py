@@ -40,11 +40,11 @@ while i < N:
 
     trip_length = 0
     cities = university_names[:]
-    for i in range(len(cities) - 1):
-        lat1 = universities[cities[i + 1]]["lat"]
-        lat0 = universities[cities[i]]["lat"]
-        long1 = universities[cities[i + 1]]["long"]
-        long0 = universities[cities[i]]["long"]
+    for k in range(len(cities) - 1):
+        lat1 = universities[cities[k + 1]]["lat"]
+        lat0 = universities[cities[k]]["lat"]
+        long1 = universities[cities[k + 1]]["long"]
+        long0 = universities[cities[k]]["long"]
         trip_length += sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0))
 
     if trip_length < shortest_trip:

@@ -20,11 +20,8 @@ fn main() {
     universities.insert("Örebro", (59.25, 15.24));
     universities.insert("Linné", (56.85, 15.24));
 
-
-
-    let n: usize = universities.len();
-    let university_names: Vec<String> = vec![];
-    university_names = universities.keys();
+    let mut university_names: Vec<String> = vec!["BTH".to_string(), "Uppsala".to_string(), "Lund".to_string()];
+    let n: usize = university_names.len();
 
     let mut p = vec![n; n + 1];
     let mut i: usize = 0;
@@ -39,21 +36,21 @@ fn main() {
 
         university_names.swap(i, j);
 
-        // $cities = &university_names;
-        // $trip_length = 0;
-        // for ($i = 0; $i < count($cities) - 1; $i++) {
-        //     $lat1 = $universities[$cities[$i + 1]]["lat"];
-        //     $lat0 = $universities[$cities[$i]]["lat"];
-        //     $long1 = $universities[$cities[$i + 1]]["long"];
-        //     $long0 = $universities[$cities[$i]]["long"];
-        //     $trip_length += sqrt(($lat1 - $lat0)*($lat1 - $lat0) + ($long1 - $long0)*($long1 - $long0));
-        // }
-        //
+        let cities = university_names.clone();
+        let mut trip_length: i32 = 0;
+        for k in 0..(cities.len() - 1) {
+            // let lat1: f64 = universities[cities[k + 1].to_string()].0;
+            // let lat0: f64 = universities[cities[k].to_string()].0;
+            // let long1: f64 = universities[cities[k + 1].to_string()].1;
+            // let long0: f64 = universities[cities[k].to_string()].1;
+            // trip_length += sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
+        }
+
         // if ($trip_length < $shortest_trip) {
         //     $shortest_trip = $trip_length;
         //     $shortest_trip_universities = $cities;
         // }
-        //
+
         i = 1;
         while p[i] == 0 {
             p[i] = i;

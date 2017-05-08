@@ -36,11 +36,11 @@ while (i < N) {
     var cities = university_names.slice();
 
     var trip_length = 0;
-    for (var i = 0; i < cities.length - 1; i++) {
-        var lat1 = universities[cities[i + 1]]["lat"];
-        var lat0 = universities[cities[i]]["lat"];
-        var long1 = universities[cities[i + 1]]["long"];
-        var long0 = universities[cities[i]]["long"];
+    for (var k = 0; k < cities.length - 1; k++) {
+        var lat1 = universities[cities[k + 1]]["lat"];
+        var lat0 = universities[cities[k]]["lat"];
+        var long1 = universities[cities[k + 1]]["long"];
+        var long0 = universities[cities[k]]["long"];
         trip_length += Math.sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
     }
 

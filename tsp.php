@@ -1,7 +1,6 @@
 <?php
 
-// ini_set('memory_limit', '6120M');
-set_time_limit(300);
+set_time_limit(600);
 
 $time_start = microtime(true);
 
@@ -16,7 +15,7 @@ $universities = [
     'Linköping' => ["lat" => 58.39, "long" => 15.57],
     'Karlstad' => ["lat" => 59.40, "long" => 13.58],
     'Örebro' => ["lat" => 59.25, "long" => 15.24],
-    'Linné' => ["lat" => 56.85, "long" => 14.82]
+    // 'Linné' => ["lat" => 56.85, "long" => 14.82]
 ];
 
 $university_names = array_keys($universities);
@@ -39,11 +38,11 @@ while ($i < $N) {
 
     $cities = $university_names;
     $trip_length = 0;
-    for ($i = 0; $i < count($cities) - 1; $i++) {
-        $lat1 = $universities[$cities[$i + 1]]["lat"];
-        $lat0 = $universities[$cities[$i]]["lat"];
-        $long1 = $universities[$cities[$i + 1]]["long"];
-        $long0 = $universities[$cities[$i]]["long"];
+    for ($k = 0; $k < count($cities) - 1; $k++) {
+        $lat1 = $universities[$cities[$k + 1]]["lat"];
+        $lat0 = $universities[$cities[$k]]["lat"];
+        $long1 = $universities[$cities[$k + 1]]["long"];
+        $long0 = $universities[$cities[$k]]["long"];
         $trip_length += sqrt(($lat1 - $lat0)*($lat1 - $lat0) + ($long1 - $long0)*($long1 - $long0));
     }
 

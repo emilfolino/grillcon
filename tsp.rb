@@ -35,11 +35,11 @@ while i < N
 
     cities = university_names.clone
     trip_length = 0
-    for i in 0..(cities.length - 2)
-        lat1 = universities[cities[i + 1]]["lat"]
-        lat0 = universities[cities[i]]["lat"]
-        long1 = universities[cities[i + 1]]["long"]
-        long0 = universities[cities[i]]["long"]
+    for k in 0..(cities.length - 2)
+        lat1 = universities[cities[k + 1]]["lat"]
+        lat0 = universities[cities[k]]["lat"]
+        long1 = universities[cities[k + 1]]["long"]
+        long0 = universities[cities[k]]["long"]
         trip_length += Math.sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0))
     end
 
