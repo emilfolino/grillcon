@@ -12,19 +12,16 @@ fn main() {
     universities.insert("Linköping", (58.39, 15.57));
     universities.insert("Karlstad", (59.40, 13.58));
     universities.insert("Örebro", (59.25, 15.24));
+    universities.insert("Örebro", (56.85, 15.24));
 
     let university_names = universities.keys();
-
-    // let mut permutations = [];
-
     let n: usize = university_names.len();
 
-    println!("{}", n);
     let mut p: [i32; 11] = [10i32; 11];
     let mut i: i32 = 0;
 
     let mut shortest_trip: i32 = 1000000;
-    let mut shortest_trip_universities: [char; 10] = [""; 10];
+    let mut shortest_trip_universities: [String; 10] = [""; 10];
 
     while i < n as i32 {
         p[i] = p[i] - 1;

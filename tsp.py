@@ -14,7 +14,8 @@ universities = {
     'Umeå' : {"lat" : 63.82, "long" : 20.30},
     'Linköping' : {"lat" : 58.39, "long" : 15.57},
     'Karlstad' : {"lat" : 59.40, "long" : 13.58},
-    'Örebro' : {"lat" : 59.25, "long" : 15.24}
+    'Örebro' : {"lat" : 59.25, "long" : 15.24},
+    'Linné' : {"lat" : 56.85, "long" : 14.82}
 }
 
 university_names = list(universities.keys())
