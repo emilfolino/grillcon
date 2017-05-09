@@ -13,6 +13,8 @@ fn main() {
     let mut p = vec![n; n + 1];
     let mut i: usize = 0;
 
+    println!("{} {} {}", n, p[0], i);
+
     let mut shortest_trip: f64 = 1000000.0;
     let mut shortest_trip_universities: Vec<String> = Vec::with_capacity(n as usize);
 
@@ -21,19 +23,19 @@ fn main() {
 
         let j: usize = i % 2 * p[i];
 
-        university_names.swap(i, j);
+        // university_names.swap(i, j);
 
         let cities = university_names.clone();
         let mut trip_length: f64 = 0.0;
         for k in 0..(cities.len() - 1) {
-            let index1 = original_university_names.iter().position(|ref r| r == &cities[k + 1].as_str()).unwrap();
-            let index0 = original_university_names.iter().position(|ref r| r == &cities[k].as_str()).unwrap();
-
-            let lat1: f64 = university_coordinates[index1].0;
-            let lat0: f64 = university_coordinates[index0].0;
-            let long1: f64 = university_coordinates[index1].1;
-            let long0: f64 = university_coordinates[index0].1;
-            trip_length += ((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0)).sqrt();
+            // let index1 = original_university_names.iter().position(|ref r| r == &cities[k + 1].as_str()).unwrap();
+            // let index0 = original_university_names.iter().position(|ref r| r == &cities[k].as_str()).unwrap();
+            //
+            // let lat1: f64 = university_coordinates[index1].0;
+            // let lat0: f64 = university_coordinates[index0].0;
+            // let long1: f64 = university_coordinates[index1].1;
+            // let long0: f64 = university_coordinates[index0].1;
+            // trip_length += ((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0)).sqrt();
         }
 
         if trip_length < shortest_trip {
@@ -52,5 +54,5 @@ fn main() {
 
     println!("Shortest trip length: {}", shortest_trip);
     println!("{}", shortest_trip_universities.join(" --> "));
-    println!("Total Execution Time: {} seconds", start.to(end));
+    println!("Total Execution Time: {}", start.to(end));
 }

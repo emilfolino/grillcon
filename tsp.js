@@ -62,5 +62,4 @@ var time = end - start;
 
 console.log("Shortest trip length: " + shortest_trip);
 console.log(shortest_trip_universities.join(" --> "));
-
 console.log("Total Execution Time: " + time / 1000 + " seconds.")
