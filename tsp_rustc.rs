@@ -1,23 +1,18 @@
-extern crate time;
-use time::PreciseTime;
-
 use std::collections::HashMap;
 
 fn main() {
-    let start = PreciseTime::now();
-
     let mut universities = HashMap::new();
     universities.insert("BTH", (56.18, 15.59));
     universities.insert("Uppsala", (59.85, 17.63));
     universities.insert("Lund", (55.71, 13.20));
-    // universities.insert("KTH", (59.34, 18.07));
-    // universities.insert("Chalmers", (57.68, 11.97));
-    // universities.insert("Luleå", (65.61, 22.14));
-    // universities.insert("Umeå", (63.82, 20.30));
-    // universities.insert("Linköping", (58.39, 15.57));
-    // universities.insert("Karlstad", (59.40, 13.58));
-    // universities.insert("Örebro", (59.25, 15.24));
-    // universities.insert("Linné", (56.85, 15.24));
+    universities.insert("KTH", (59.34, 18.07));
+    universities.insert("Chalmers", (57.68, 11.97));
+    universities.insert("Luleå", (65.61, 22.14));
+    universities.insert("Umeå", (63.82, 20.30));
+    universities.insert("Linköping", (58.39, 15.57));
+    universities.insert("Karlstad", (59.40, 13.58));
+    universities.insert("Örebro", (59.25, 15.24));
+    universities.insert("Linné", (56.85, 15.24));
 
     let mut university_names: Vec<&str> = universities.iter().map(|(name, _)| name.clone()).collect();
 
@@ -61,9 +56,6 @@ fn main() {
         }
     }
 
-    let end = PreciseTime::now();
-
     println!("Shortest trip length: {}", shortest_trip);
     println!("{}", shortest_trip_universities.join(" --> "));
-    println!("Total Execution Time: {}", start.to(end));
 }
