@@ -1,5 +1,3 @@
-start = Time.now
-
 universities = {
     'BTH' => {"lat" => 56.18, "long" => 15.59},
     'Uppsala' => {"lat" => 59.85, "long" => 17.63},
@@ -55,12 +53,6 @@ while i < N
     end
 end
 
-
-
-finish = Time.now
-
 puts "Shortest trip length: " + shortest_trip.to_s
 puts shortest_trip_universities.join(" --> ")
-
-diff = finish - start
-puts "Execution time: " + diff.to_s
+puts "Execution time: \n"

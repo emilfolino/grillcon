@@ -1,8 +1,5 @@
-from timeit import default_timer as timer
 from sys import maxsize
 from math import sqrt
-
-start = timer()
 
 universities = {
     'BTH' : {"lat" : 56.18, "long" : 15.59},
@@ -23,9 +20,7 @@ permutations = {}
 
 N = len(university_names)
 p = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
 i = 0
-
 shortest_trip = maxsize
 shortest_trip_universities = {}
 
@@ -56,9 +51,6 @@ while i < N:
         p[i] = i
         i += 1
 
-end = timer()
-
 print("Shortest trip length: " + str(shortest_trip))
 print(" --> ".join(shortest_trip_universities))
-
-print("Total Execution Time: " + str(end - start))
+print("Total Execution Time:\n")

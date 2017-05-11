@@ -43,7 +43,7 @@ def travelling_salesman(points):
 def main():
     ## Points are universities in Sweden
     ## Order is: BTH, Uppsala, Lund, KTH, Chalmers, Luleå, Umeå,
-    ## Linköping, Karlstad, Örebro
+    ## Linköping, Karlstad, Örebro, Linné
 
     start = timer()
     points = [(56.18, 15.59), (59.85, 17.63), (55.71, 13.20),

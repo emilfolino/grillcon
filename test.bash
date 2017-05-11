@@ -1,18 +1,27 @@
 echo "================================================="
 echo "  RUNNING TSP ALGORITHMS"
 echo "================================================="
-echo "  PHP 7.0"
-time php tsp.php
-# echo "================================================="
 # echo "  PHP 5.6"
-# /usr/bin/php5.6 tsp.php
+# time /usr/bin/php5.6 tsp.php
+# echo "================================================="
+# echo "  PHP 7.0"
+# time php tsp.php
 # echo "================================================="
 # echo "  NODE"
-# node tsp.js
+# time node tsp.js
 # echo "================================================="
 # echo "  PYTHON"
-# python3 tsp.py
+# time python3 tsp.py
+# echo "================================================="
+# echo "  PYTHON ITERTOOLS"
+# time python3 tsp_itertools.py
 # echo "================================================="
 # echo "  RUBY"
-# ruby tsp.rb
+# time ruby tsp.rb
 # echo "================================================="
+echo "  RUST HASH"
+time ./tsp_rustc_hash
+echo "================================================="
+echo "  RUST"
+time ./tsp_rustc
+echo "================================================="

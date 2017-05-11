@@ -1,8 +1,6 @@
 <?php
 
-set_time_limit(600);
-
-$time_start = microtime(true);
+set_time_limit(1200);
 
 $universities = [
     'BTH' => ["lat" => 56.18, "long" => 15.59],
@@ -15,7 +13,7 @@ $universities = [
     'Linköping' => ["lat" => 58.39, "long" => 15.57],
     'Karlstad' => ["lat" => 59.40, "long" => 13.58],
     'Örebro' => ["lat" => 59.25, "long" => 15.24],
-    // 'Linné' => ["lat" => 56.85, "long" => 14.82]
+    'Linné' => ["lat" => 56.85, "long" => 14.82]
 ];
 
 $university_names = array_keys($universities);
@@ -58,13 +56,6 @@ while ($i < $N) {
     }
 }
 
-
-$time_end = microtime(true);
-
-$execution_time = ($time_end - $time_start);
-
-
-
 echo "Shortest trip length: " . $shortest_trip . "\n";
 echo implode(" --> ", $shortest_trip_universities) . "\n";
-echo "Total Execution Time: ".$execution_time." seconds\n";
+echo "Total Execution Time: \n";

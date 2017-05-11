@@ -18,7 +18,7 @@ fn main() {
 
     let n: usize = university_names.len();
 
-    let mut p = vec![n; n + 1];
+    let mut p = vec![0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     let mut i: usize = 0;
 
     let mut shortest_trip: f64 = 1000000.0;

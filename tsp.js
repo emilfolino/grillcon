@@ -1,5 +1,3 @@
-var start = new Date().getTime();
-
 var universities = {
     'BTH' : {"lat" : 56.18, "long" : 15.59},
     'Uppsala' : {"lat" : 59.85, "long" : 17.63},
@@ -56,10 +54,6 @@ while (i < N) {
     }
 }
 
-
-var end = new Date().getTime();
-var time = end - start;
-
 console.log("Shortest trip length: " + shortest_trip);
 console.log(shortest_trip_universities.join(" --> "));
-console.log("Total Execution Time: " + time / 1000 + " seconds.")
+console.log("Total Execution Time:\n");

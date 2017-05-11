@@ -9,7 +9,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: 'liga', 'kern';
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Merriweather', serif;
 }
 
 h1, h2, h3 {
@@ -79,7 +79,7 @@ a {
     background-color: #912C00;
     color: #fff;
 
-    font-family: helvetica, sans-serif;
+    font-family: 'Merriweather', serif;
     font-size: 38pt;
     font-weight: 200;
 }
@@ -104,9 +104,22 @@ a {
     margin-bottom: 0;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 table thead tr th {
     text-align: left;
     border-bottom: 1px solid white;
+}
+
+table tbody tr td {
+    padding: 4px 10px 8px 16px;
+}
+
+table tbody tr td:first-child {
+    text-align: right;
+    border-right: 1px solid white;
 }
 
 /* Custom */
