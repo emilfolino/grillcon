@@ -23,7 +23,7 @@ $university_names = array_keys($universities);
 $permutations = [];
 
 $N = count($university_names);
-$p = array_fill(0, $N + 1, $N);
+$p = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 $i = 0;
 $shortest_trip = PHP_INT_MAX;
 $shortest_trip_universities = [];

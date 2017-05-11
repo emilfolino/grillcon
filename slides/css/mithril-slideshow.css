@@ -104,6 +104,11 @@ a {
     margin-bottom: 0;
 }
 
+table thead tr th {
+    text-align: left;
+    border-bottom: 1px solid white;
+}
+
 /* Custom */
 /*
 #objects p {

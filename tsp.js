@@ -18,7 +18,7 @@ var university_names = Object.keys(universities);
 var permutations = {};
 
 var N = university_names.length;
-var p = Array(N + 1).fill(N);
+var p = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 var i = 0;
 
 var shortest_trip = Number.MAX_SAFE_INTEGER ;
