@@ -35,15 +35,23 @@
 
 
 <script data-role="slide" type="text/html">
-<h1>Java och C</h1>
-<h3>Elefanterna i rummet?</h3>
+<h1>Java?</h1>
+</script>
+
+
+
+<script data-role="slide" type="text/html">
+<h1>C?</h1>
+<h3>Segmentation fault</h3>
 </script>
 
 
 
 <script data-role="slide" type="text/html">
 <h1>Rust</h1>
-<h3>New kid on the C-block</h3>
+<p>Kompilerar bort segfaults</p>
+<p>Minnes säkert</p>
+<p>Tråd säkert</p>
 </script>
 
 
@@ -56,8 +64,15 @@
 
 
 <script data-role="slide" type="text/html">
+<img src="img/resan.png">
+</script>
+
+
+
+<script data-role="slide" type="text/html">
 <pre data-code="tsp.pseudo"></pre>
 </script>
+
 
 
 <script id="tsp.pseudo" data-role="code" data-language="c" type="text/html">
@@ -98,6 +113,21 @@
 </thead>
 <tbody>
     <tr>
+        <td>Python</td>
+        <td>7m 27.620s</td>
+    </tr>
+
+    <tr>
+        <td>Ruby</td>
+        <td>4m 12.508s</td>
+    </tr>
+
+    <tr>
+        <td>Python itertools</td>
+        <td>3m 44.372s</td>
+    </tr>
+
+    <tr>
         <td>PHP5.6</td>
         <td>3m 53.114s</td>
     </tr>
@@ -108,34 +138,33 @@
     </tr>
 
     <tr>
-        <td>JavaScript</td>
+        <td>JavaScript (nodejs)</td>
         <td>0m 23.926s</td>
     </tr>
 
     <tr>
-        <td>Python</td>
-        <td>7m 27.620s</td>
-    </tr>
-
-    <tr>
-        <td>Ruby</td>
-        <td>4m 12.508s</td>
-    </tr>
-    <tr>
         <td>Java</td>
         <td>A</td>
     </tr>
+
     <tr>
         <td>C</td>
         <td>B</td>
     </tr>
+
     <tr>
         <td>Rust hash tables</td>
-        <td>0m22.165s</td>
+        <td>0m 18.443s</td>
     </tr>
+
     <tr>
-        <td>Rust arrays</td>
-        <td>0m3.523s</td>
+        <td>Rust</td>
+        <td>0m 1.539s</td>
+    </tr>
+
+    <tr>
+        <td>Rust precompute</td>
+        <td>0m 0.425s</td>
     </tr>
 </tbody>
 </table>
@@ -149,14 +178,7 @@
 
 
 
-<script data-role="slide" type="text/html">
-<h1>Beror på!</h1>
-</script>
-
-
-
 <!-- include essential js-script -->
 <script src="js/mithril.min.js"></script>
 <script src="js/mithril-slideshow.js"></script>
-
 </html>

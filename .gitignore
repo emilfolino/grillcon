@@ -2,5 +2,6 @@
 tsp/target/
 
 *.o
+tsp_rustc_precomputed
 tsp_rustc_hash
 tsp_rustc
