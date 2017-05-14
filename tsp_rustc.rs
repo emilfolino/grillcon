@@ -33,7 +33,6 @@ fn main() {
             let (_, lat1, long1) = universities[pair[1]];
 
             trip_length += ((lat1 - lat0).powi(2) + (long1 - long0).powi(2)).sqrt();
-            //trip_length += (lat1 - lat0).hypot(long1 - long0); // Slow?
         }
 
         if trip_length < shortest_trip {

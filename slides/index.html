@@ -22,14 +22,14 @@
 <script data-role="slide" type="text/html">
 <h1>Rust</h1>
 <h2>Ska vi gå nära metallen?</h2>
-<h3>Emil Folino, efo@bth.se</h3>
+<p>Emil Folino, efo@bth.se</p>
 </script>
 
 
 
 <script data-role="slide" type="text/html">
 <h1>Webbspråk</h1>
-<h3>JavaScript (nodejs), PHP, Python, Ruby</h3>
+<h3>JavaScript, PHP, Python, Ruby</h3>
 </script>
 
 
@@ -49,22 +49,41 @@
 
 <script data-role="slide" type="text/html">
 <h1>Rust</h1>
-<p>Kompilerar bort segfaults</p>
-<p>Minnes säkert</p>
-<p>Tråd säkert</p>
+<h3>Kompilerar bort segfaults</h3>
+<h3>Minnes säkert</h3>
+<h3>Tråd säkert</h3>
 </script>
 
 
 
 <script data-role="slide" type="text/html">
 <h1>TSP</h1>
-<h3>11 högskolor - ~40 mil permutationer</h3>
+<h3>11 högskolor</h3>
 </script>
 
 
 
 <script data-role="slide" type="text/html">
 <img src="img/resan.png">
+</script>
+
+
+
+<script data-role="slide" type="text/html">
+<p>BTH Lund Uppsala</p>
+<p>BTH Uppsala Lund</p>
+<p>Lund BTH Uppsala</p>
+<p>Lund Uppsala BTH</p>
+<p>Uppsala BTH Lund</p>
+<p>Uppsala Lund BTH</p>
+</script>
+
+
+
+<script data-role="slide" type="text/html">
+<h3>11 högskoler</h3>
+<h3>11! permutationer</h3>
+<h3>~40 miljoner unika kombinationer</h3>
 </script>
 
 
@@ -93,6 +112,42 @@
             increment i by 1
         } // end while (p[i] is equal to 0)
     } // end while (i < N)
+</script>
+
+
+
+<script data-role="slide" type="text/html">
+<pre data-code="tsp_rustc.rs"></pre>
+</script>
+
+
+
+<script id="tsp_rustc.rs" data-role="code" data-language="c" type="text/html">
+    while i < n {
+        p[i] -= 1;
+        let j = i % 2 * p[i];
+        cities.swap(i, j);
+
+        let mut trip_length = 0.0;
+
+        for pair in cities.windows(2) {
+            let (_, lat0, long0) = universities[pair[0]];
+            let (_, lat1, long1) = universities[pair[1]];
+
+            trip_length += ((lat1 - lat0).powi(2) + (long1 - long0).powi(2)).sqrt();
+        }
+
+        if trip_length < shortest_trip {
+            shortest_trip = trip_length;
+            shortest_trip_universities = cities.to_vec();
+        }
+
+        i = 1;
+        while p[i] == 0 {
+            p[i] = i;
+            i += 1;
+        }
+    }
 </script>
 
 

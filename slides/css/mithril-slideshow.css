@@ -9,7 +9,13 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -moz-font-feature-settings: 'liga', 'kern';
-    font-family: 'Merriweather', serif;
+    font-size: 50pt;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+
+p {
+    line-height: 62pt;
 }
 
 h1, h2, h3 {
@@ -75,13 +81,8 @@ a {
     bottom: 0;
     left: 8%;
     overflow: hidden;
-
     background-color: #912C00;
     color: #fff;
-
-    font-family: 'Merriweather', serif;
-    font-size: 38pt;
-    font-weight: 200;
 }
 
 #objects {
