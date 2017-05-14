@@ -159,6 +159,26 @@
 
 
 <script data-role="slide" type="text/html">
+    <pre data-code="test.bash"></pre>
+</script>
+
+
+
+<script id="test.bash" data-role="code" data-language="bash" type="text/html">
+$ rustc -C opt-level=3 -C target-cpu=native tsp_rustc.rs
+$ time ./tsp_rustc
+Shortest trip length: 21.058498609348383
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+
+real	0m1.831s
+user	0m1.821s
+sys	0m0.004s
+
+</script>
+
+
+
+<script data-role="slide" type="text/html">
 <table>
 <thead>
     <tr>
@@ -213,13 +233,8 @@
     </tr>
 
     <tr>
-        <td>Rust</td>
+        <td>Rust slices</td>
         <td>0m 1.539s</td>
-    </tr>
-
-    <tr>
-        <td>Rust precompute</td>
-        <td>0m 0.425s</td>
     </tr>
 </tbody>
 </table>
