@@ -51,11 +51,12 @@ int main () {
             trip_length += sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
         }
 
+
         if (trip_length < shortest_trip) {
             shortest_trip = trip_length;
-            // for (int m = 0; m < n; m++) {
-            //     strcpy(shortest_trip_universities[m], mut_universities[m]);
-            // }
+            for (int m = 0; m < n; m++) {
+                shortest_trip_universities[m] = mut_universities[m];
+            }
         }
 
         i = 1;
