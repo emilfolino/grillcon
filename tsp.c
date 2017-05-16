@@ -2,10 +2,26 @@
 #include <limits.h>
 #include <math.h>
 #include <string.h>
+#include "map_lib.h"
 
 int main () {
     int n = 11;
-    const char *universities[11] = {"BTH", "Uppsala", "Lund", "KTH", "Chalmers", "Luleå", "Umeå", "Linköping", "Karlstad", "Örebro", "Linné"};
+    struct map_t *universities;
+
+    universities = map_create();
+    map_set(universities, "BTH", 0);
+    // map_set(universities, "BTH", 1);
+    // map_set(universities, "BTH", 2);
+    // map_set(universities, "BTH", 3);
+    // map_set(universities, "BTH", 4);
+    // map_set(universities, "BTH", 5);
+    // map_set(universities, "BTH", 6);
+    // map_set(universities, "BTH", 7);
+    // map_set(universities, "BTH", 8);
+    // map_set(universities, "BTH", 9);
+    // map_set(universities, "BTH", 10);
+
+    // const char *universities[11] = {"BTH", "Uppsala", "Lund", "KTH", "Chalmers", "Luleå", "Umeå", "Linköping", "Karlstad", "Örebro", "Linné"};
 
     char *mut_universities[11] = {"BTH", "Uppsala", "Lund", "KTH", "Chalmers", "Luleå", "Umeå", "Linköping", "Karlstad", "Örebro", "Linné"};
 
@@ -31,17 +47,17 @@ int main () {
             char *city0 = mut_universities[k];
             char *city1 = mut_universities[k + 1];
 
-            int index0 = -1;
+            int index0 = 0;
             int index1 = -1;
-            for (int l = 0; l < n; l++) {
-                if (strcmp(universities[l], city0) == 0) {
-                    index0 = l;
-                }
-
-                if (strcmp(universities[l], city1) == 0) {
-                    index1 = l;
-                }
-            }
+            // for (int l = 0; l < n; l++) {
+            //     if (strcmp(universities[l], city0) == 0) {
+            //         index0 = l;
+            //     }
+            //
+            //     if (strcmp(universities[l], city1) == 0) {
+            //         index1 = l;
+            //     }
+            // }
 
             double lat1 = coordinates[index1][0];
             double lat0 = coordinates[index0][0];
@@ -50,7 +66,6 @@ int main () {
 
             trip_length += sqrt((lat1 - lat0)*(lat1 - lat0) + (long1 - long0)*(long1 - long0));
         }
-
 
         if (trip_length < shortest_trip) {
             shortest_trip = trip_length;
