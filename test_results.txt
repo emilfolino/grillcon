@@ -1,0 +1,94 @@
+=================================================
+  RUNNING TSP ALGORITHMS
+=================================================
+  PHP 5.6
+Shortest trip length: 20.967262436594
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Total Execution Time:
+
+real	2m51.468s
+user	2m51.456s
+sys	0m0.008s
+=================================================
+  PHP 7.0
+Shortest trip length: 20.967262436594
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Total Execution Time:
+
+real	1m10.636s
+user	1m10.624s
+sys	0m0.008s
+=================================================
+  NODE
+Shortest trip length: 20.967262436594098
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Total Execution Time:
+
+
+real	0m16.649s
+user	0m16.644s
+sys	0m0.004s
+=================================================
+  PYTHON
+Shortest trip length: 20.967262436594098
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Total Execution Time:
+
+
+real	4m58.091s
+user	4m58.080s
+sys	0m0.004s
+=================================================
+  PYTHON ITERTOOLS
+The minimum distance to visit all the following points: ((56.18, 15.59), (59.85, 17.63), (55.71, 13.2), (59.34, 18.07), (57.68, 11.97), (65.61, 22.14), (63.82, 20.3), (58.39, 15.57), (59.4, 13.58), (59.25, 15.24), (56.85, 14.82))
+        starting at (56.18, 15.59) is 20.967262436594098.
+Timing: 213.72121070799767
+
+real	3m33.739s
+user	3m32.548s
+sys	0m1.184s
+=================================================
+  RUBY
+Shortest trip length: 20.967262436594098
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Execution time:
+
+real	3m19.323s
+user	3m19.300s
+sys	0m0.004s
+=================================================
+  C
+Shortest trip length: 20.967262
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Execution time:
+
+real    0m19.605s
+user    0m19.604s
+sys     0m0.000s
+
+=================================================
+  Java
+Shortest trip length: 20.967262
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+Execution time:
+
+real	0m7.700s
+user	0m7.728s
+sys	0m0.004s
+=================================================
+  RUST HASH
+Shortest trip length: 21.058498609348383
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+
+real	0m17.661s
+user	0m17.660s
+sys	0m0.000s
+=================================================
+  RUST
+Shortest trip length: 21.058498609348383
+BTH --> Linné --> Lund --> Chalmers --> Karlstad --> Örebro --> Linköping --> KTH --> Uppsala --> Umeå --> Luleå
+
+real	0m1.513s
+user	0m1.512s
+sys	0m0.000s
+=================================================
