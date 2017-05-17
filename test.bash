@@ -2,25 +2,25 @@ echo "================================================="
 echo "  RUNNING TSP ALGORITHMS"
 echo "================================================="
 echo "  PHP 5.6"
-echo time /usr/bin/php5.6 tsp.php
+( time /usr/bin/php5.6 tsp.php ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  PHP 7.0"
-echo time php tsp.php
+( time php tsp.php ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  NODE"
-echo time node tsp.js
+( time node tsp.js ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  PYTHON"
-echo time python3 tsp.py
+( time python3 tsp.py ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  PYTHON ITERTOOLS"
-echo time python3 tsp_itertools.py
+( time python3 tsp_itertools.py ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  RUBY"
-echo time ruby tsp.rb
+( time ruby tsp.rb ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  C"
-echo time ./tsp
+( time ./tsp ) >> test_results.txt 2>&1
 echo "================================================="
 echo "  Java"
 ( time java tsp_java ) >> test_results.txt 2>&1
